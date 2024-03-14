@@ -1,14 +1,11 @@
 package com.calculatoronspring.calculator.service;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.NullSource;
 
-import java.util.stream.IntStream;
+
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,31 +35,31 @@ public class CalculatorServiseImpTest {
     @ParameterizedTest
     @MethodSource("argsProvider")
      public void minusParametizedTest(int a, int b){
-        int actual = calculator.minus(a, b);
-        int expected = a - b;
+        String actual = calculator.minus(a, b);
+        String expected = String.format("%d - %d = %d", a, b, a - b);
         assertEquals(expected, actual);
     }
 
     @ParameterizedTest
     @MethodSource("argsProvider")
     public void addWithParametizedTest(int a, int b) {
-        int actual = calculator.add(a, b);
-        int expected = a + b;
+        String actual = calculator.add(a, b);
+        String expected = String.format("%d + %d = %d", a, b, a + b);
         assertEquals(expected, actual);
     }
 
     @ParameterizedTest
     @MethodSource("argsProvider")
     public void divide(int a, int b){
-        int actual = calculator.divide(a, b);
-        int expected = a / b;
+        String actual = calculator.divide(a, b);
+        String expected = String.format("%d / %d = %d", a, b, a / b);
         assertEquals(expected, actual);
     }
     @ParameterizedTest
     @MethodSource("argsProvider")
     public void multiply(int a, int b) {
-        int actual = calculator.multiply(a, b);
-        int expected = a * b;
+        String actual = calculator.multiply(a, b);
+        String expected = String.format("%d * %d = %d", a, b, a * b);
         assertEquals(expected, actual);
     }
 
