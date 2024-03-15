@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class CalculatorServiceImp  implements CalculatorService {
 
     @Override
-    public String add(Integer a, Integer b) throws IllegalArgumentException {
+    public String add(Integer a, Integer b) {
         isNotNullArgs(a,b);
         return String.format("%d + %d = %d", a, b, a+ b);
     }
