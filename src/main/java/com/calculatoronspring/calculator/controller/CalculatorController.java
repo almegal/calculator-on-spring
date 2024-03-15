@@ -43,6 +43,6 @@ public class CalculatorController {
     public String multiply(
             @RequestParam(name="num1",required = false) Integer a,
             @RequestParam(name="num2",required = false) Integer b){
-        return calculator.add(a, b);
+        return calculator.multiply(a, b);
     }
 }
